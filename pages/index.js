@@ -1,18 +1,18 @@
 import Head from 'next/head';
-import styles from '../styles/App.module.css';
-import Palette from '../components/Palette.js'
+import "bootstrap/dist/css/bootstrap.css";
+import Palette from '../components/Palette.js';
+import Header from '../components/Header';
 
 export default function App() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Colour Palette Generator</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main>
-        <Palette />
-      </main>
+      <Header />
 
       <footer>Made by Sushma Jayaram</footer>
 
@@ -29,6 +29,6 @@ export default function App() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </>
   );
 }
