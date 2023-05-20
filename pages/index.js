@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import "bootstrap/dist/css/bootstrap.css";
 import Palette from '../components/Palette.js';
 import Header from '../components/Header';
 
