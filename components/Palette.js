@@ -1,0 +1,6 @@
+import React from 'react';
+import styles from "../styles/Palette.module.css";
+
+export default function Palette() {
+  return <h1 className={styles.title}>Colour Palette</h1>
+}
