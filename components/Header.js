@@ -3,7 +3,7 @@ import React from 'react';
 export default function Header() {
   return (
     <header>
-      <h1 className= "header">Generate Beautiful Palettes</h1>
+      <h2 className="heading">Generate Beautiful Palettes</h2>
     </header>
   );
 }
