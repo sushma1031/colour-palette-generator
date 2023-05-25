@@ -1,0 +1,47 @@
+.input-group {
+  flex-wrap: nowrap;
+  top: -0.5rem;
+  align-items: center;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 0;
+}
+
+.hex-input {
+  margin: 30px auto 20px auto;
+  outline: none;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  transition-property: box-shadow;
+}
+
+.error {
+  box-shadow: 0 0 10px #ed9e9e;
+}
+
+.input-bar-btn {
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.color-picker-btn {
+  margin-right: 0.5rem;
+}
+
+.form-text {
+  position: relative;
+  top: -15px;
+  left: 10px;
+  margin: 0;
+}
