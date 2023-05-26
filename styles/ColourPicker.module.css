@@ -1,0 +1,12 @@
+.colourPicker {
+  position: absolute;
+  z-index: 2;
+  top: 210px;
+}
+
+@media (min-width: 992px) {
+  .colourPicker {
+    position: absolute;
+    left: 310px;
+  }
+}
