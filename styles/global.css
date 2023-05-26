@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+/*
+  This comment is necessary to fix build CSS ordering bug.
+  https://github.com/vercel/next.js/issues/16630#issuecomment-1037305875
+*/
 
 :root {
   --main-colour: rgb(243, 89, 107);
@@ -33,7 +36,6 @@ button.navbar-toggler:focus {
 }
 
 .heading {
-  font-family: "Prata", serif;
   padding: 2rem 0 0;
   margin-bottom: 0;
   color: var(--main-colour);
