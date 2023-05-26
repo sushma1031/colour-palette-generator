@@ -2,7 +2,6 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Head from "next/head";
-import Script from "next/script";
 
 export default function Layout({ children }) {
   return (
