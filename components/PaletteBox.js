@@ -12,7 +12,7 @@ export default function PaletteBox(props) {
         ` ${styles.paletteBox}`
       }
     >
-      {["000", "111", "222", "333", "444"].map((colour, index) => {
+      {props.coloursList.map((colour, index) => {
         return <ColourBox key={index} hex={colour} />;
       })}
     </div>
