@@ -1,6 +1,6 @@
-#Colour Palette Generator
-###Built using React.js with Next.js
+# Colour Palette Generator
+### Built using React.js with Next.js
 
-###Also uses:
+### Also uses:
 - Bootstrap
 - Material UI
