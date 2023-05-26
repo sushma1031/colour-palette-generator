@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import Script from "next/script";
-import Head from "next/head";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/global.css"
+import "../styles/global.css";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -11,12 +10,7 @@ export default function App({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <Head>
-        {process.env.NODE_ENV != "development" && (
-          <link rel="stylesheet" href="../styles/global.css" />
-        )}
-        <Script src="https://kit.fontawesome.com/689f04e9e5.js" />
-      </Head>
+      <Script src="https://kit.fontawesome.com/689f04e9e5.js" />
       <Component {...pageProps} />
     </>
   );
