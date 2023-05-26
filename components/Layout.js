@@ -11,6 +11,9 @@ export default function Layout({ children }) {
         <link rel="icon" href="/myfavicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
+        {process.env.NODE_ENV != "development" && (
+          <link rel="preload" href="/style.css" as="style" />
+        )}
       </Head>
       <Navbar />
       <div className="content-wrap container-fluid">
