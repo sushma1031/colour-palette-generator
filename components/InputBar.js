@@ -14,7 +14,13 @@ export default function InputBar(props) {
 
   return (
     <form className="col-xl-5 px-4 mx-auto ">
-      <div className={"input-group " + `${styles.inputGroup} ${styles.hexInput}`}>
+      <div
+        className={
+          "input-group " +
+          `${styles.inputGroup} ${styles.hexInput}` +
+          (props.error ? ` ${styles.error}` : "")
+        }
+      >
         <button
           aria-label="Toggle colour picker"
           type="button"
