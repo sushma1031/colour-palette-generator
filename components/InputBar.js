@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/InputBar.module.css";
+import styles from "../styles/InputBar.module.css";
 import AutoFixNormalIcon from "@mui/icons-material/AutoFixNormal";
 import ColorizeIcon from "@mui/icons-material/Colorize";
 import ColourPicker from "./ColourPicker";
@@ -14,11 +14,11 @@ export default function InputBar(props) {
 
   return (
     <form className="col-xl-5 px-4 mx-auto ">
-      <div className={"input-group hex-input" + (props.error ? " error" : "")}>
+      <div className={"input-group " + `${styles.inputGroup} ${styles.hexInput}`}>
         <button
           aria-label="Toggle colour picker"
           type="button"
-          className="input-bar-btn color-picker-btn"
+          className={`${styles.inputBarBtn} ${styles.colorPickerBtn}`}
           onClick={(event) => {
             event.preventDefault();
             setShowColourPicker(!showColourPicker);
@@ -41,7 +41,7 @@ export default function InputBar(props) {
         />
         <button
           aria-label="Submit"
-          className="input-bar-btn"
+          className={styles.inputBarBtn}
           type="submit"
           onClick={(event) => {
             event.preventDefault();
@@ -53,7 +53,7 @@ export default function InputBar(props) {
         </button>
       </div>
       {props.error && (
-        <div id="colourHelp" className="form-text">
+        <div id="colourHelp" className={styles.formText}>
           Please enter a valid HEX colour code.
         </div>
       )}

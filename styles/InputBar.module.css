@@ -1,10 +1,10 @@
-.input-group {
+.inputGroup {
   flex-wrap: nowrap;
   top: -0.5rem;
   align-items: center;
 }
 
-.input-group input {
+.inputGroup input {
   border: none;
   outline: none;
   font-size: 1.1rem;
@@ -13,7 +13,7 @@
   min-width: 0;
 }
 
-.hex-input {
+.hexInput {
   margin: 30px auto 20px auto;
   outline: none;
   background: #fff;
@@ -27,7 +27,7 @@
   box-shadow: 0 0 10px #ed9e9e;
 }
 
-.input-bar-btn {
+.inputBarBtn {
   padding: 0;
   border: none;
   background-color: #fff;
@@ -35,11 +35,11 @@
   cursor: pointer;
 }
 
-.color-picker-btn {
+.colorPickerBtn {
   margin-right: 0.5rem;
 }
 
-.form-text {
+.formText {
   position: relative;
   top: -15px;
   left: 10px;
