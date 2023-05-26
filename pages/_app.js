@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         {process.env.NODE_ENV != "development" && (
-          <link rel="stylesheet" href="/css/global.css" />
+          <link rel="stylesheet" href="../styles/global.css" />
         )}
         <Script src="https://kit.fontawesome.com/689f04e9e5.js" />
       </Head>
