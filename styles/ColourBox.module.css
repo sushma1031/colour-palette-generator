@@ -1,0 +1,32 @@
+.colourBox {
+  align-self: stretch;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.colourBox>p {
+  cursor: pointer;
+}
+
+.colourBox:hover {
+  flex-grow: 2;
+}
+
+@media (max-width: 992px) {
+  .colourBox {
+    align-self: center;
+    width: inherit;
+    justify-content: center;
+  }
+
+  .colourBox>p {
+    margin: 0;
+    padding: 1rem 0;
+  }
+}
