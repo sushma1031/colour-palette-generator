@@ -14,8 +14,10 @@ export default function Layout({ children }) {
         <meta charSet="utf-8" />
       </Head>
       <Navbar />
-      <Header />
-      <div>{children}</div>
+      <div className="content-wrap container-fluid">
+        <Header />
+        <div>{children}</div>
+      </div>
       <Footer />
     </>
   );
