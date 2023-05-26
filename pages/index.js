@@ -3,6 +3,7 @@ import InputBar from "../components/InputBar";
 import PaletteBox from "../components/PaletteBox";
 import Layout from "../components/Layout";
 import generatePalette from "../lib/colours";
+import DownloadButton from "../components/DownloadButton";
 
 export default function App() {
     const initialPalette = generatePalette("#F35969");
@@ -28,6 +29,7 @@ export default function App() {
     <Layout>
       <InputBar handleClick={handleClick} error={error} />
       <PaletteBox coloursList={list} error={error} />
+      <DownloadButton/>
     </Layout>
   );
 }
