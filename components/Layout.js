@@ -9,9 +9,6 @@ export default function Layout({ children }) {
       <Head>
         <title>Colour Palette Generator</title>
         <link rel="icon" href="/myfavicon.ico" />
-        {process.env.NODE_ENV != "development" && (
-          <link rel="stylesheet" href="/global.css" />
-        )}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
       </Head>
