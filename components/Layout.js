@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>Colour Palette Generator</title>
-        <link rel="icon" href="/fav-icon.ico" />
+        <link rel="icon" href="/myfavicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
       </Head>
