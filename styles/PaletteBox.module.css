@@ -1,0 +1,33 @@
+.paletteBox {
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
+.paletteBox> :first-child {
+  border-radius: 7px 0 0 7px;
+}
+
+.paletteBox> :last-child {
+  border-radius: 0 7px 7px 0;
+}
+
+@media (max-width: 992px) {
+  .paletteBox {
+    padding: 0 1rem;
+    flex-flow: column nowrap;
+    margin: 2rem 0 0;
+    width: 100%;
+    height: 400px;
+  }
+
+  .paletteBox> :first-child {
+    border-radius: 7px 7px 0 0;
+  }
+
+  .paletteBox> :last-child {
+    border-radius: 0 0 7px 7px;
+  }
+}
