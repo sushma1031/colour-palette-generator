@@ -5,7 +5,7 @@
 
 :root {
   --main-colour: rgb(243, 89, 107);
-  --heading-dark: rgb(245, 116, 131);
+  --heading-dark: rgb(255 145 158);
   --footer-dark: hsl(353, 68%, 59%);
 }
 
