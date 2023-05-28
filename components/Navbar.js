@@ -26,7 +26,7 @@ export default function Navbar(props) {
           </ul>
         </div>
         <div className="theme-switch">
-          <Fab onClick={props.handleTheme}>{props.icon}</Fab>
+          <Fab aria-label="Theme switch button" onClick={props.handleTheme}>{props.icon}</Fab>
         </div>
       </div>
     </nav>
