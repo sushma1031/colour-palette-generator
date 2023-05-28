@@ -9,9 +9,15 @@
   --footer-dark: hsl(353, 68%, 59%);
 }
 
+body {
+  transition: all 0.2s ease-in-out;
+  
+}
+
 body.dark {
   background-color: #353535;
-  transition: background-color 0.2s ease-in-out;
+  color: #f2f2f2;
+
 }
 
 .html {
@@ -42,7 +48,7 @@ button.navbar-toggler:focus {
   box-shadow: none;
 }
 
-.theme-switch{
+.theme-switch {
   border: none;
   outline: none;
   position: absolute;
@@ -88,7 +94,7 @@ header {
   font-size: 0.9rem;
 }
 
-.dark .footer{
+.dark .footer {
   background-color: var(--footer-dark);
 }
 
