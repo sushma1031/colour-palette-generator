@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import NavLink from "./NavLink";
 import Fab from "@mui/material/Fab";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 
 export default function Navbar(props) {
   
@@ -26,7 +27,7 @@ export default function Navbar(props) {
           </ul>
         </div>
         <div className="theme-switch">
-          <Fab aria-label="Theme switch button" onClick={props.handleTheme}>{props.icon}</Fab>
+          <Fab aria-label="Theme switch button" onClick={props.handleTheme}><Brightness4Icon fontSize="large"/></Fab>
         </div>
       </div>
     </nav>
