@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import NavLink from "./NavLink";
 import Fab from "@mui/material/Fab";
-import ModeNightIcon from "@mui/icons-material/ModeNight";
-import LightModeIcon from "@mui/icons-material/LightMode";
 
-export default function Navbar() {
+export default function Navbar(props) {
   
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -30,11 +28,9 @@ export default function Navbar() {
         <div>
           <Fab
             className="theme-switch"
-            onClick={() => {
-              alert("switch!");
-            }}
+            onClick={props.handleTheme}
           >
-            <ModeNightIcon />
+            {props.icon}
           </Fab>
         </div>
       </div>
