@@ -54,7 +54,6 @@ button.navbar-toggler:focus {
   position: absolute;
   top: 0;
   right: 0;
-  padding: none;
   scale: 0.6;
 }
 

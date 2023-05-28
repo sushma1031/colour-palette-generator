@@ -25,13 +25,8 @@ export default function Navbar(props) {
             <NavLink name="Duo Tone" route="/duo-tone" />
           </ul>
         </div>
-        <div>
-          <Fab
-            className="theme-switch"
-            onClick={props.handleTheme}
-          >
-            {props.icon}
-          </Fab>
+        <div className="theme-switch">
+          <Fab onClick={props.handleTheme}>{props.icon}</Fab>
         </div>
       </div>
     </nav>
