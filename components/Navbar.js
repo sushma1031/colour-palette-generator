@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import NavLink from "./NavLink";
-
+import Fab from "@mui/material/Fab";
+import ModeNightIcon from "@mui/icons-material/ModeNight";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 export default function Navbar() {
-
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -23,8 +25,17 @@ export default function Navbar() {
             <NavLink name="Single Colour" route="/" />
 
             <NavLink name="Duo Tone" route="/duo-tone" />
-
           </ul>
+        </div>
+        <div>
+          <Fab
+            className="theme-switch"
+            onClick={() => {
+              alert("switch!");
+            }}
+          >
+            <ModeNightIcon />
+          </Fab>
         </div>
       </div>
     </nav>
