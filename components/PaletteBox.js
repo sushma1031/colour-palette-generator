@@ -13,7 +13,7 @@ export default function PaletteBox(props) {
       }
     >
       {props.coloursList.map((colour, index) => {
-        return <ColourBox key={index} hex={colour} />;
+        return <ColourBox key={index} hex={colour.hex} rgb = {colour.rgb} />;
       })}
     </div>
   );
