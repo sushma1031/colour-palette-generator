@@ -5,7 +5,7 @@ import decideColour from "../lib/decideColour";
 export default function ColourBox(props) {
   const [copied, setCopied] = useState(false);
 
-  const colourValue = decideColour(props.hex);
+  const colourValue = decideColour(props.rgb);
 
   const boxStyle = {
     backgroundColor: "#" + props.hex,
