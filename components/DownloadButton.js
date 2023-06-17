@@ -7,10 +7,10 @@ export default function DownloadButton() {
   function handleDownload() {
     const palette = document.getElementById("palette");
     html2canvas(palette).then((canvas) => {
-      const data = canvas.toDataURL("image/jpg");
+      const data = canvas.toDataURL("image/jpeg");
       const downloadLink = document.createElement("a");
       downloadLink.href = data;
-      downloadLink.download = "palette.jpg";
+      downloadLink.download = "palette.jpeg";
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
