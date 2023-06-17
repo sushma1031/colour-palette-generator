@@ -6,20 +6,29 @@ import { useEffect, useState } from "react";
 
 
 export default function Layout({ children }) {
-  const [dark, setDark] = useState(false);
-  useEffect(() => {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
 
-    if (prefersDark) {
-      setDark(true);
+  useEffect(() => {
+    if (!window.matchMedia) {
+      return;
     }
-  }, [dark]);  
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    usePreferredTheme(query.matches);
+
+    query.addEventListener("change", (event) => {
+      usePreferredTheme(event.matches);
+    });
+  }, []);  
  
+  function usePreferredTheme(prefersDark) { 
+    if (prefersDark) {
+      document.querySelector("body").classList.add("dark");
+    } else {
+      document.querySelector("body").classList.remove("dark");
+    }
+  }
+
   function handleThemeSwitch() {
     document.querySelector("body").classList.toggle("dark");
-    setDark(!dark);
   }
   
 
