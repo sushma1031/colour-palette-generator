@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 export default function NavLink(props) {
   const router = useRouter();
-  const active = (router.pathname == props.route) ? " active" : "";
+  const active = (router.pathname === props.route) ? " active" : "";
 
   return (
     <li className="nav-item">
