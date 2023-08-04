@@ -8,7 +8,7 @@ export default function ColourBox(props) {
   const colourValue = decideColour(props.rgb);
 
   const boxStyle = {
-    backgroundColor: "#" + props.hex,
+    backgroundColor: props.hex,
     color: colourValue,
   };
 
@@ -24,7 +24,7 @@ export default function ColourBox(props) {
 
   return (
     <div className={"col mx-0 " + `${styles.colourBox}`} style={boxStyle}>
-      <p onClick={copy}>{copied ? "Copied!" : "#" + props.hex.toUpperCase()}</p>
+      <p onClick={copy}>{copied ? "Copied!" : props.hex.toUpperCase()}</p>
     </div>
   );
 }
