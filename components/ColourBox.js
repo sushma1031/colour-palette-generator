@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/ColourBox.module.css";
-import decideColour from "../lib/decideColour";
+import decideColour from "../lib/decideFontColour";
 
 export default function ColourBox(props) {
   const [copied, setCopied] = useState(false);
