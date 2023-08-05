@@ -8,9 +8,9 @@ export default function InputGroup() {
 
   return (
     <div className={`${styles.group}`}>
-      <InputBar index={0} single={false} />
-      <GenerateButton />
-      <InputBar index={1} single={false} />
+      <InputBar index={0} single={false} error={""} />
+      <GenerateButton hoverEffect={true} />
+      <InputBar index={1} single={false} error={""} />
     </div>
   );
 }
