@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/InputBar.module.css";
-import AutoFixNormalIcon from "@mui/icons-material/AutoFixNormal";
+import IconButton from "@mui/material/IconButton";
 import ColorizeIcon from "@mui/icons-material/Colorize";
 import ColourPicker from "./ColourPicker";
+import GenerateButton from "./GenerateButton";
 
 export default function InputBar(props) {
   const [colour, setColour] = useState("");
@@ -12,10 +13,22 @@ export default function InputBar(props) {
     setColour(colInput);
   }
 
-  const margin = props.single ? 'mx-auto' : 'mx-0';
+  function handleClick(event) {
+    event.preventDefault();
+    setShowColourPicker(false);
+    props.handleClick(colour);
+  }
+
+  function toggleColourPicker(event){
+    event.preventDefault();
+    setShowColourPicker(!showColourPicker);
+  }
+
+  const margin = props.single ? "mx-auto" : "mx-0";
+  const padding = props.single ? "px-4" : "px-3";
 
   return (
-    <form className={`col-xl-5 px-4 ${margin}`}>
+    <form className={`col-xl-5 ${padding} ${margin}`}>
       <div
         className={
           "input-group " +
@@ -23,17 +36,18 @@ export default function InputBar(props) {
           (props.error ? ` ${styles.error}` : "")
         }
       >
-        <button
+        <IconButton
           aria-label="Toggle colour picker"
-          type="button"
-          className={`${styles.inputBarBtn} ${styles.colorPickerBtn}`}
-          onClick={(event) => {
-            event.preventDefault();
-            setShowColourPicker(!showColourPicker);
+          sx={{
+            "&.MuiButtonBase-root:hover": {
+              bgcolor: "transparent",
+            }
           }}
+          disableRipple
+          onClick={toggleColourPicker}
         >
-          <ColorizeIcon fontSize="small" style={{ opacity: 0.6 }} />
-        </button>
+          <ColorizeIcon fontSize="small" />
+        </IconButton>
         <input
           aria-label="Enter HEX value"
           type="text"
@@ -47,22 +61,9 @@ export default function InputBar(props) {
             setShowColourPicker(false);
           }}
         />
-        {props.single &&
-          <button
-          aria-label="Submit"
-          className={styles.inputBarBtn}
-          type="submit"
-          onClick={(event) => {
-            event.preventDefault();
-            setShowColourPicker(false);
-            props.handleClick(colour);
-          }}
-        >
-          <AutoFixNormalIcon />
-        </button>
-        }
+        {props.single && <GenerateButton onSubmit={handleClick} hoverEffect={false}/>}
       </div>
-      {props.single && props.error && (
+      {props.error && (
         <div id="colourHelp" className={styles.formText}>
           Please enter a valid HEX colour code.
         </div>
