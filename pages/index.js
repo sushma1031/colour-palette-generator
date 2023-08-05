@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import InputBar from "../components/InputBar";
 import PaletteBox from "../components/PaletteBox";
 import Layout from "../components/Layout";
-import generatePaletteSingle from "../lib/colours";
+import { generatePaletteSingle } from "../lib/colours";
 import DownloadButton from "../components/DownloadButton";
 
 export default function App() {
