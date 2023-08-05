@@ -1,15 +1,27 @@
+import React, { useState } from "react";
+import InputBar from "../components/InputBar";
+import PaletteBox from "../components/PaletteBox";
+import InputGroup from "../components/InputGroup";
 import Layout from "../components/Layout";
+import generatePalette from "../lib/colours";
+import DownloadButton from "../components/DownloadButton";
 
 export default function App() {
-  const customStyle = {
-    textAlign: "center",
-    margin: "2rem 0"
-  };
+  const initialPalette = generatePalette("#6D9EF1");
+  const [list, setList] = useState(initialPalette);
+  const [error, setError] = useState(false);
 
+  function handleClick(colour) {
+    console.log("Clicked");
+  }
   return (
-      <Layout>
-        <h4 style={customStyle}>This page is a work in progress, please check back later!</h4>
-      </Layout>
-
+    <Layout>
+      <InputGroup>
+        <InputBar index={0} handleClick={handleClick} error={error} />
+        <InputBar index={1} handleClick={handleClick} error={error} />
+      </InputGroup>
+      <PaletteBox coloursList={list} error={error} />
+      <DownloadButton />
+    </Layout>
   );
 }
