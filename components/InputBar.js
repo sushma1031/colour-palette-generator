@@ -55,7 +55,7 @@ export default function InputBar(props) {
           type="text"
           value={colour}
           name="colour"
-          placeholder="Enter HEX colour code"
+          placeholder={props.placeholder}
           onChange={(e) => {
             handleColourInput(e.target.value);
           }}

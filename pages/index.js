@@ -27,7 +27,12 @@ export default function App() {
 
   return (
     <Layout>
-      <InputBar handleClick={handleClick} error={error} single={true} />
+      <InputBar
+        handleClick={handleClick}
+        error={error}
+        single={true}
+        placeholder="Enter HEX colour code"
+      />
       <PaletteBox coloursList={list} error={error} />
       <DownloadButton />
     </Layout>

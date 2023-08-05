@@ -16,9 +16,24 @@ export default function InputGroup(props) {
 
   return (
     <div className={`${styles.group}`}>
-      <InputBar index={0} single={false} error={error} changeColours={handleChange}/>
-      <GenerateButton hoverEffect={true} handleClick={() => props.handleClick(colours)} />
-      <InputBar index={1} single={false} error={error} changeColours={handleChange}/>
+      <InputBar
+        index={0}
+        single={false}
+        error={error}
+        changeColours={handleChange}
+        placeholder="#F35969"
+      />
+      <GenerateButton
+        hoverEffect={true}
+        handleClick={() => props.handleClick(colours)}
+      />
+      <InputBar
+        index={1}
+        single={false}
+        error={error}
+        changeColours={handleChange}
+        placeholder="#B476F3"
+      />
     </div>
   );
 }
