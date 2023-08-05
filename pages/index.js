@@ -27,9 +27,9 @@ export default function App() {
 
   return (
     <Layout>
-      <InputBar handleClick={handleClick} error={error} />
+      <InputBar handleClick={handleClick} error={error} single={true} />
       <PaletteBox coloursList={list} error={error} />
-      <DownloadButton/>
+      <DownloadButton />
     </Layout>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import InputBar from "../components/InputBar";
 import PaletteBox from "../components/PaletteBox";
 import InputGroup from "../components/InputGroup";
 import Layout from "../components/Layout";
@@ -16,10 +15,7 @@ export default function App() {
   }
   return (
     <Layout>
-      <InputGroup>
-        <InputBar index={0} handleClick={handleClick} error={error} />
-        <InputBar index={1} handleClick={handleClick} error={error} />
-      </InputGroup>
+      <InputGroup/>
       <PaletteBox coloursList={list} error={error} />
       <DownloadButton />
     </Layout>
