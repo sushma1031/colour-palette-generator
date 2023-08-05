@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import PaletteBox from "../components/PaletteBox";
 import InputGroup from "../components/InputGroup";
 import Layout from "../components/Layout";
-import generatePalette from "../lib/colours";
+import {generatePaletteDuo} from "../lib/colours";
 import DownloadButton from "../components/DownloadButton";
 
 export default function App() {
-  const initialPalette = generatePalette("#6D9EF1");
+  const initialPalette = generatePaletteDuo(["#F35969", "#555"]);
   const [list, setList] = useState(initialPalette);
   const [error, setError] = useState(false);
 
