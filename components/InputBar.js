@@ -11,6 +11,8 @@ export default function InputBar(props) {
 
   function handleColourInput(colInput) {
     setColour(colInput);
+    if (!props.single)
+      props.changeColours(props.index, colInput);
   }
 
   function handleClick(event) {
