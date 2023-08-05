@@ -45,3 +45,8 @@
   left: 10px;
   margin: 0;
 }
+
+.mx{
+  margin-left: auto;
+  margin-right: auto;
+}

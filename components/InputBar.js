@@ -13,7 +13,7 @@ export default function InputBar(props) {
   }
 
   return (
-    <form className="col-xl-5 px-4 mx-auto ">
+    <form className={`col-xl-5 px-4 ${styles.mx}`}>
       <div
         className={
           "input-group " +
