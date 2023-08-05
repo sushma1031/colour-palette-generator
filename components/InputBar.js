@@ -12,8 +12,10 @@ export default function InputBar(props) {
     setColour(colInput);
   }
 
+  const margin = props.single ? 'mx-auto' : 'mx-0';
+
   return (
-    <form className={`col-xl-5 px-4 ${styles.mx}`}>
+    <form className={`col-xl-5 px-4 ${margin}`}>
       <div
         className={
           "input-group " +
@@ -45,7 +47,8 @@ export default function InputBar(props) {
             setShowColourPicker(false);
           }}
         />
-        <button
+        {props.single &&
+          <button
           aria-label="Submit"
           className={styles.inputBarBtn}
           type="submit"
@@ -57,8 +60,9 @@ export default function InputBar(props) {
         >
           <AutoFixNormalIcon />
         </button>
+        }
       </div>
-      {props.error && (
+      {props.single && props.error && (
         <div id="colourHelp" className={styles.formText}>
           Please enter a valid HEX colour code.
         </div>
