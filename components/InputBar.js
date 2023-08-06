@@ -11,17 +11,16 @@ export default function InputBar(props) {
 
   function handleColourInput(colInput) {
     setColour(colInput);
-    if (!props.single)
-      props.changeColours(props.index, colInput);
+    if (!props.single) props.changeColours(props.index, colInput);
   }
 
-  function handleClick(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     setShowColourPicker(false);
     props.handleClick(colour);
   }
 
-  function toggleColourPicker(event){
+  function toggleColourPicker(event) {
     event.preventDefault();
     setShowColourPicker(!showColourPicker);
   }
@@ -30,7 +29,10 @@ export default function InputBar(props) {
   const padding = props.single ? "px-4" : "px-3";
 
   return (
-    <form className={`col-xl-5 ${padding} ${margin}`}>
+    <form
+      className={`col-xl-5 ${padding} ${margin}`}
+      onSubmit={(e) => e.preventDefault()}
+    >
       <div
         className={
           "input-group " +
@@ -43,7 +45,7 @@ export default function InputBar(props) {
           sx={{
             "&.MuiButtonBase-root:hover": {
               bgcolor: "transparent",
-            }
+            },
           }}
           disableRipple
           onClick={toggleColourPicker}
@@ -63,7 +65,9 @@ export default function InputBar(props) {
             setShowColourPicker(false);
           }}
         />
-        {props.single && <GenerateButton onSubmit={handleClick} hoverEffect={false}/>}
+        {props.single && (
+          <GenerateButton handleSubmit={handleSubmit} hoverEffect={false} />
+        )}
       </div>
       {props.error && (
         <div id="colourHelp" className={styles.formText}>

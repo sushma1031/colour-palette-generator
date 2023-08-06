@@ -12,7 +12,7 @@ export default function GenerateButton(props) {
       };
   return (
     <div aria-label="generate colour palette">
-      <IconButton type="submit" sx={onHover} onSubmit={props.handleSubmit}>
+      <IconButton type="submit" sx={onHover} onClick={props.handleSubmit}>
         <AutoFixNormalIcon sx={{ color: "#2c2c2c" }} />
       </IconButton>
     </div>

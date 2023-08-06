@@ -14,6 +14,11 @@ export default function InputGroup(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.handleClick(colours);
+  }
+
   return (
     <div className={`${styles.group}`}>
       <InputBar
@@ -25,7 +30,7 @@ export default function InputGroup(props) {
       />
       <GenerateButton
         hoverEffect={true}
-        handleClick={() => props.handleClick(colours)}
+        handleSubmit={handleSubmit}
       />
       <InputBar
         index={1}
