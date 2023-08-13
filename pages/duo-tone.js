@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import { generatePaletteDuo } from "../lib/colours";
 import DownloadButton from "../components/DownloadButton";
 
-export default function App() {
+export default function DuoTone() {
   const initialPalette = generatePaletteDuo(["#F35969", "#ccc", "#b476f3"]);
   const [list, setList] = useState(initialPalette);
   const [error, setError] = useState(false);
