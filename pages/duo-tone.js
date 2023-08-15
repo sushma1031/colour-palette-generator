@@ -14,8 +14,9 @@ export default function DuoTone() {
     try {
       setError(false);
       const testValidHex = (colour) => /^#(?:[0-9A-F]{3}){1,2}$/i.test(colour);
-      if (colours.every(testValidHex)) {
+      if (colours.length === 2 && colours.every(testValidHex)) {
         const palette = generatePaletteDuo(colours);
+        console.log(palette);
         setList(palette);
       } else {
         setError(true);
