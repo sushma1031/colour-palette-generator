@@ -7,8 +7,7 @@ export default function PaletteBox(props) {
     <div
       id="palette"
       className={
-        "mx-lg-auto mb-2" +
-        (props.error ? " mt-lg-3" : " mt-lg-5") +
+        "mx-lg-auto mb-2 mt-lg-5" +
         ` ${styles.paletteBox}`
       }
     >

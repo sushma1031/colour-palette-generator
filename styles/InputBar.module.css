@@ -14,17 +14,19 @@
 }
 
 .hexInput {
-  margin: 30px auto 20px auto;
+  margin: 30px auto auto;
   outline: none;
   background: #fff;
-  padding: 5px 15px;
-  border-radius: 50px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
-  transition-property: box-shadow;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: solid 1px #8a8989;
+  transition-property: box-shadow, border;
 }
 
 .error {
-  box-shadow: 0 0 10px #ed9e9e;
+  border-color: #dc3545;
+  box-shadow: 0 0 3px #dc5635;
 }
 
 .inputBarBtn {
@@ -40,8 +42,6 @@
 }
 
 .formText {
-  position: relative;
-  top: -15px;
-  left: 10px;
   margin: 0;
+  font-size: 0.8rem;
 }

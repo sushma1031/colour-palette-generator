@@ -70,9 +70,9 @@ export default function InputBar(props) {
         )}
       </div>
       {props.error && (
-        <div id="colourHelp" className={styles.formText}>
+        <p id="colourHelp" className={styles.formText}>
           Please enter a valid HEX colour code.
-        </div>
+        </p>
       )}
       {showColourPicker && (
         <ColourPicker colour={colour} handleChange={handleColourInput} />
