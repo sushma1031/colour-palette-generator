@@ -1,47 +1,37 @@
-.inputGroup {
-  flex-wrap: nowrap;
-  top: -0.5rem;
+.textInput {
+  display: flex;
+  width: inherit;
+  flex-grow: 1;
   align-items: center;
+  outline: none;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  border: solid 1px #8a8989;
+  border-right: none;
+  transition-property: box-shadow, border;
+  height: inherit;
 }
 
-.inputGroup input {
+.textInput input {
+  box-sizing: border-box;
   border: none;
   outline: none;
   font-size: 1.1rem;
+  padding-left: 0;
   margin-right: auto;
   margin-left: auto;
   min-width: 0;
 }
 
-.hexInput {
-  margin: 30px auto auto;
+.textInput input:focus {
+  border: none;
   outline: none;
-  background: #fff;
-  padding: 5px;
-  border-radius: 5px;
   box-shadow: none;
-  border: solid 1px #8a8989;
-  transition-property: box-shadow, border;
 }
 
 .error {
   border-color: #dc3545;
   box-shadow: 0 0 3px #dc5635;
-}
-
-.inputBarBtn {
-  padding: 0;
-  border: none;
-  background-color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.colorPickerBtn {
-  margin-right: 0.5rem;
-}
-
-.formText {
-  margin: 0;
-  font-size: 0.8rem;
 }
