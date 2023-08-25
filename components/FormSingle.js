@@ -22,8 +22,8 @@ export default function Form(props) {
       onSubmit={handleSubmit}
       className={`col-xl-5 mx-auto px-4 ${styles.layout}`}
     >
-      <InputBar />
-      <div className={`${styles.buttonStyle}`}>
+      <InputBar placeholder="#F35969" name="hex-colour" error={error} />
+      <div className={`${styles.buttonStyle}` + (error? ` ${styles.error}`: "")}>
         <IconButton
           type="submit"
           sx={{
@@ -39,7 +39,7 @@ export default function Form(props) {
         </IconButton>
       </div>
       <div className={`${styles.break}`}></div>
-      {true && (
+      {error && (
         <div id="colourHelp" className={`form-text ${styles.smallText}`}>
           Please enter a valid HEX colour code.
         </div>
