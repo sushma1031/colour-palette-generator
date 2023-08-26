@@ -4,19 +4,8 @@ import IconButton from "@mui/material/IconButton";
 import ColorizeIcon from "@mui/icons-material/Colorize";
 import ColourPicker from "./ColourPicker";
 
-export default function InputBar(props) {
-  const [colour, setColour] = useState("");
-  const [showColourPicker, setShowColourPicker] = useState(false);
-
-  function handleColourInput(colInput) {
-    setColour(colInput);
-  }
-
-  function toggleColourPicker(event) {
-    event.preventDefault();
-    setShowColourPicker(!showColourPicker);
-  }
-
+const InputBar = (props) => {
+  let { showColourPicker, toggleColourPicker } = props;
   return (
     <>
       <div
@@ -40,21 +29,24 @@ export default function InputBar(props) {
           aria-label="Enter HEX colour code"
           type="text"
           className="form-control"
-          value={colour}
+          value={props.value}
           name={props.name}
           placeholder={props.placeholder}
           onChange={(e) => {
-            handleColourInput(e.target.value);
+            props.onChange(e.target.value);
           }}
-          onClick={() => {
-            setShowColourPicker(false);
+          onClick={(e) => {
+            if (showColourPicker)
+              toggleColourPicker(e);
           }}
         />
       </div>
 
       {showColourPicker && (
-        <ColourPicker colour={colour} handleChange={handleColourInput} />
+        <ColourPicker colour={props.value} handleChange={props.onChange} />
       )}
     </>
   );
-}
+};
+
+export default InputBar;
