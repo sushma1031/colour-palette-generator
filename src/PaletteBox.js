@@ -1,13 +1,13 @@
 import React from "react";
-import styles from "../styles/PaletteBox.module.css";
-import ColourBox from "./ColourBox";
+import styles from "./styles/PaletteBox.module.css";
+import ColourBox from "./components/ColourBox";
 
 export default function PaletteBox(props) {
   return (
     <div
       id="palette"
       className={
-        "mx-lg-auto mb-2 mt-lg-5" +
+        "mx-lg-auto mb-3 mt-lg-5" +
         ` ${styles.paletteBox}`
       }
     >

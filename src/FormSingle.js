@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "../styles/Form.module.css";
-import InputBar from "./InputBar";
+import styles from "./styles/Form.module.css";
+import InputBar from "./components/InputBar";
 import IconButton from "@mui/material/IconButton";
 import AutoFixNormalIcon from "@mui/icons-material/AutoFixNormal";
 import { testHexColour } from "../lib/colourUtils"

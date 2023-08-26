@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Script from "next/script";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/global.css";
+import "../src/global.css";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {

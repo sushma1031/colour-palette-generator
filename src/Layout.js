@@ -1,5 +1,5 @@
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Navbar from "./Navbar";
 import Head from "next/head";
 import { useEffect, useState } from "react";

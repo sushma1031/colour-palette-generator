@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PaletteBox from "../components/PaletteBox";
-import InputGroup from "../components/InputGroup";
+import Form from "../components/FormSingle";
 import Layout from "../components/Layout";
 import { generatePaletteDuo } from "../lib/colours";
 import DownloadButton from "../components/DownloadButton";
@@ -27,7 +27,7 @@ export default function DuoTone() {
   }
   return (
     <Layout>
-      <InputGroup handleClick={handleClick} />
+      <Form />
       <PaletteBox coloursList={list} error={error} />
       <DownloadButton />
     </Layout>

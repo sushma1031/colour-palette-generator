@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Form from "../components/FormSingle";
-import PaletteBox from "../components/PaletteBox";
-import Layout from "../components/Layout";
+import Form from "../src/FormSingle";
+import PaletteBox from "../src/PaletteBox";
+import Layout from "../src/Layout";
 import { single } from "../lib/generatePalette";
-import DownloadButton from "../components/DownloadButton";
+import DownloadButton from "../src/DownloadButton";
 
 export default function App() {
     const initialPalette = single("#F35969");
