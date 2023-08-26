@@ -1,25 +1,18 @@
 import React, { useState } from "react";
-import InputBar from "../components/InputBar";
+import Form from "../components/FormSingle";
 import PaletteBox from "../components/PaletteBox";
 import Layout from "../components/Layout";
-import { generatePaletteSingle } from "../lib/colours";
+import { single } from "../lib/generatePalette";
 import DownloadButton from "../components/DownloadButton";
 
 export default function App() {
-    const initialPalette = generatePaletteSingle("#F35969");
+    const initialPalette = single("#F35969");
     const [list, setList] = useState(initialPalette);
-    const [error, setError] = useState(false);
 
-    function handleClick(colour) {
+    function createPalette(colour) {
       try {
-        setError(false);
-        const colReg = /^#(?:[0-9A-F]{3}){1,2}$/i;
-        if (colReg.test(colour)) {
-          const palette = generatePaletteSingle(colour);
-          setList(palette);
-        } else {
-          setError(true);
-        }
+        const palette = single(colour);
+        setList(palette);
       } catch (err) {
         console.log(err.message);
       }
@@ -27,13 +20,8 @@ export default function App() {
 
   return (
     <Layout>
-      <InputBar
-        handleClick={handleClick}
-        error={error}
-        single={true}
-        placeholder="#F35969"
-      />
-      <PaletteBox coloursList={list} error={error} />
+      <Form createPalette={createPalette} />
+      <PaletteBox coloursList={list}/>
       <DownloadButton />
     </Layout>
   );
