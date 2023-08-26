@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styles from "../styles/ColourBox.module.css";
-import decideColour from "../lib/decideFontColour";
+import {decideFontColour} from "../lib/colourUtils";
 
 export default function ColourBox(props) {
   const [copied, setCopied] = useState(false);
 
-  const colourValue = decideColour(props.rgb);
+  const colourValue = decideFontColour(props.rgb);
 
   const boxStyle = {
     backgroundColor: props.hex,
