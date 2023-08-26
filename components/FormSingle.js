@@ -1,29 +1,57 @@
 import React, { useState } from "react";
-import styles from '../styles/Form.module.css'
+import styles from "../styles/Form.module.css";
 import InputBar from "./InputBar";
 import IconButton from "@mui/material/IconButton";
 import AutoFixNormalIcon from "@mui/icons-material/AutoFixNormal";
-import ColorizeIcon from "@mui/icons-material/Colorize";
-import ColourPicker from "./ColourPicker";
+import { testHexColour } from "../lib/colourUtils"
 
 export default function Form(props) {
   const [error, setError] = useState(false);
   const [colour, setColour] = useState("");
   const [showColourPicker, setShowColourPicker] = useState(false);
 
+  function handleColourInput(colInput) {
+    setColour(colInput);
+    if (error) {
+      if (testHexColour(colInput))
+        setError(false);
+    }
+  }
+
+  function toggleColourPicker(event) {
+    event.preventDefault();
+    setShowColourPicker(!showColourPicker);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     setShowColourPicker(false);
-    console.log("Clicked!");
+    if (testHexColour(colour)) {
+      setError(false);
+      props.createPalette(colour);
+    } else {
+      setError(true);
+    }
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className={`col-xl-5 mx-auto px-4 ${styles.layout}`}
+      className={`col-xl-4 mx-auto ${styles.layout}`}
     >
-      <InputBar placeholder="#F35969" name="hex-colour" error={error} />
-      <div className={`${styles.buttonStyle}` + (error? ` ${styles.error}`: "")}>
+      <InputBar
+        index={0}
+        placeholder="#F35969"
+        name="hex-colour"
+        value={colour}
+        error={error}
+        onChange={handleColourInput}
+        showColourPicker={showColourPicker}
+        toggleColourPicker={toggleColourPicker}
+      />
+      <div
+        className={`${styles.buttonStyle}`}
+      >
         <IconButton
           type="submit"
           sx={{
