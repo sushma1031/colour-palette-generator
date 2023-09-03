@@ -4,10 +4,12 @@ import { SketchPicker } from "react-color";
 
 export default function ColourPicker(props) {
   const [pickedColour, setPickedColour] = useState(props.colour);
-
+  const name = props.index ? "secondary" : "primary";
   return (
     <SketchPicker
-      className={styles.colourPicker}
+      key={props.index}
+      disableAlpha={true}
+      className={styles[name]}
       color={pickedColour}
       onChangeComplete={(color) => {
         setPickedColour(color.hex);
