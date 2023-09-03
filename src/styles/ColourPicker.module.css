@@ -1,12 +1,16 @@
-.colourPicker {
+.primary, .secondary {
   position: absolute;
   z-index: 2;
   top: 210px;
 }
 
+
 @media (min-width: 992px) {
-  .colourPicker {
+  .primary {
     position: absolute;
     left: 310px;
+  }
+  .secondary {
+    left: 550px;
   }
 }
