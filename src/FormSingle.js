@@ -18,8 +18,7 @@ export default function Form(props) {
     }
   }
 
-  function toggleColourPicker(event) {
-    event.preventDefault();
+  function toggleColourPicker() {
     setShowColourPicker(!showColourPicker);
   }
 
@@ -45,7 +44,7 @@ export default function Form(props) {
         name="hex-colour"
         value={colour}
         error={error}
-        onChange={handleColourInput}
+        handleChange={handleColourInput}
         showColourPicker={showColourPicker}
         toggleColourPicker={toggleColourPicker}
       />
