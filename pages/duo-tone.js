@@ -5,8 +5,8 @@ import Layout from "../src/Layout";
 import { duoTone } from "../lib/generatePalette";
 import DownloadButton from "../src/DownloadButton";
 
+const initialPalette = duoTone(["#F35969", "#CCC", "#B476F3"]);
 export default function DuoTone() {
-  const initialPalette = duoTone(["#F35969", "#CCC", "#B476F3"]);
   const [list, setList] = useState(initialPalette);
 
   function createPalette(colours) {

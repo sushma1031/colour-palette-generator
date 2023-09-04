@@ -5,8 +5,8 @@ import Layout from "../src/Layout";
 import { single } from "../lib/generatePalette";
 import DownloadButton from "../src/DownloadButton";
 
-export default function App() {
-    const initialPalette = single("#F35969");
+const initialPalette = single("#F35969");
+export default function App() { 
     const [list, setList] = useState(initialPalette);
 
     function createPalette(colour) {
