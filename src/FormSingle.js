@@ -36,7 +36,7 @@ export default function Form(props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`col-xl-4 mx-auto ${styles.layout}`}
+      className={`col-10 col-xl-4 mx-auto ${styles.layout}`}
     >
       <InputBar
         index={0}
