@@ -6,7 +6,7 @@
   height: 45px;
 }
 
-.break{
+.break {
   flex-basis: 100%;
   height: 0;
 }

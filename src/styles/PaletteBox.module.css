@@ -29,6 +29,7 @@
 
   .duo {
     height: 640px;
+    margin-top: 7rem;
   }
 
   .paletteBox> :first-child {

@@ -9,7 +9,7 @@ export default function ColourPicker(props) {
     <SketchPicker
       key={props.index}
       disableAlpha={true}
-      className={styles[name]}
+      className={`${styles.picker} ${styles[name]}`}
       color={pickedColour}
       onChangeComplete={(color) => {
         setPickedColour(color.hex);
