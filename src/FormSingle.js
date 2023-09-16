@@ -41,7 +41,7 @@ export default function Form(props) {
       <InputBar
         index={0}
         placeholder="#F35969"
-        name="hex-colour"
+        name="hexColour"
         value={colour}
         error={error}
         handleChange={handleColourInput}
