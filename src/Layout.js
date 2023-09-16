@@ -4,33 +4,44 @@ import Navbar from "./Navbar";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
+const getTheme = () => {
+  let theme = "light";
+
+  if (typeof window !== "undefined") {
+    theme = sessionStorage.getItem("theme");
+    if (!theme) {
+      if (!window.matchMedia) {
+        //If no choice can be detected, consider light theme
+        theme = "light";
+      } else {
+        const query = window.matchMedia("(prefers-color-scheme: dark)");
+        theme = query.matches ? "dark" : "light";
+      }
+      sessionStorage.setItem("theme", theme);
+    }
+  }
+  return theme;
+};
 
 export default function Layout({ children }) {
+  const [theme, setTheme] = useState(getTheme);
 
   useEffect(() => {
-    if (!window.matchMedia) {
-      return;
-    }
-    const query = window.matchMedia("(prefers-color-scheme: dark)");
-    usePreferredTheme(query.matches);
+    function refreshTheme() {
+      sessionStorage.setItem("theme", theme);
+      if (theme === "light") {
+         document.querySelector("body").classList.remove("dark");
+      } else {
+        document.querySelector("body").classList.add("dark");
+      }
+    };
+    refreshTheme();
+  }, [theme]);
 
-    query.addEventListener("change", (event) => {
-      usePreferredTheme(event.matches);
-    });
-  }, []);  
- 
-  function usePreferredTheme(prefersDark) { 
-    if (prefersDark) {
-      document.querySelector("body").classList.add("dark");
-    } else {
-      document.querySelector("body").classList.remove("dark");
-    }
+  function handleThemeToggle() {
+    const prefersTheme = theme === "light" ? "dark" : "light";
+    setTheme(prefersTheme);
   }
-
-  function handleThemeSwitch() {
-    document.querySelector("body").classList.toggle("dark");
-  }
-  
 
   return (
     <>
@@ -40,12 +51,12 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
       </Head>
-      <Navbar handleTheme={handleThemeSwitch} />
-      <div className="content-wrap container-fluid">
-        <Header />
-        <div>{children}</div>
-      </div>
-      <Footer />
+      <Navbar handleTheme={handleThemeToggle} />
+        <div className="content-wrap container-fluid">
+          <Header />
+          <div>{children}</div>
+        </div>
+        <Footer />
     </>
   );
 }
