@@ -3,9 +3,11 @@
 
 ### Also uses:
 - Bootstrap
-- Values.js
+- Culori.js
 - React-Color
 - Material UI
 
 ### Functionality
-Users can input a single HEX colour code (or select from colour picker) and a palette of lighter & darker shades is generated. Palette can be downloaded.
+- Users can input a single HEX colour code (or select using a colour picker) and a monochrome palette is generated.
+- Users can input two colours and a palette of shades between them is generated.
+- Palette can be downloaded.
