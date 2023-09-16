@@ -10,25 +10,30 @@ export default function Form(props) {
   const [colours, setColours] = useState(["", ""]);
   const [showColourPicker, setShowColourPicker] = useState([false, false]);
 
-  const hasError = error.some((err) => err);
+  const fields = [
+    { name: "primary", placeholder: "#F35969" },
+    { name: "secondary", placeholder: "#ECD175" },
+  ];
 
+  const hasError = error.some((err) => err);
+  
   function handleColourInput(colInput, index) {
-    setColours((prev) => [
-      ...prev.slice(0, index),
-      colInput,
-      ...prev.slice(index + 1),
-    ]);
+    setColours((prev) => {
+      const newArr = [...prev];
+      newArr[index] = colInput;
+      return newArr;
+    });
     if (error[index]) {
-      if (testHexColour(colInput)) changeError(false, index);
+      if (testHexColour(colInput)) changeError(index, false);
     }
   }
 
-  const changeError = (error, index) => {
-    setError((prev) => [
-      ...prev.slice(0, index),
-      error,
-      ...prev.slice(index + 1),
-    ]);
+  const changeError = (index, error) => {
+    setError((prev) => {
+      const newArr = [...prev];
+      newArr[index] = error;
+      return newArr;
+    });
   }
 
   function toggleColourPicker(index) {
@@ -57,26 +62,21 @@ export default function Form(props) {
       onSubmit={handleSubmit}
       className={`col-xl-4 mx-auto ${styles.layout}`}
     >
-      <InputBar
-        key={0}
-        inputIndex={0}
-        placeholder="#F35969"
-        value={colours[0]}
-        error={error[0]}
-        handleChange={handleColourInput}
-        showColourPicker={showColourPicker[0]}
-        toggleColourPicker={toggleColourPicker}
-      />
-      <InputBar
-        key={1}
-        inputIndex={1}
-        placeholder="#F35969"
-        value={colours[1]}
-        error={error[1]}
-        handleChange={handleColourInput}
-        showColourPicker={showColourPicker[1]}
-        toggleColourPicker={toggleColourPicker}
-      />
+
+      {fields.map((elem, index) => 
+        <InputBar
+          key={index}
+          inputIndex={index}
+          name={elem.name}
+          placeholder={elem.placeholder}
+          value={colours[index]}
+          error={error[index]}
+          handleChange={handleColourInput}
+          showColourPicker={showColourPicker[index]}
+          toggleColourPicker={toggleColourPicker}
+        />
+      )}
+      
       <div className={`${styles.buttonStyle}`}>
         <IconButton
           type="submit"
