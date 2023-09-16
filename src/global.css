@@ -97,6 +97,10 @@ header {
   background-color: var(--footer-dark);
 }
 
+.dark .form-text {
+  color: #bbc0c4;
+}
+
 .download-btn {
   text-align: center;
   margin: 2rem 0 0;
