@@ -5,8 +5,7 @@ import ColorizeIcon from "@mui/icons-material/Colorize";
 import ColourPicker from "./ColourPicker";
 
 const InputBar = (props) => {
-  let { showColourPicker, toggleColourPicker, inputIndex, value, placeholder, error } = props;
-  const name = inputIndex ? "secondary" : "primary";
+  let { showColourPicker, toggleColourPicker, inputIndex, name, placeholder, value, error } = props;
 
   const handleColourPickerChange = (colour) => {
     props.handleChange(colour, inputIndex);
@@ -46,6 +45,7 @@ const InputBar = (props) => {
             props.handleChange(e.target.value, inputIndex);
           }}
           onClick={(e) => {
+            e.preventDefault();
             if (showColourPicker) toggleColourPicker(inputIndex);
           }}
         />
