@@ -5,7 +5,7 @@ import Layout from "../src/Layout";
 import { duoTone } from "../lib/generatePalette";
 import DownloadButton from "../src/DownloadButton";
 
-const initialPalette = duoTone(["#F35969", "#CCC", "#B476F3"]);
+const initialPalette = duoTone(["#F35969", "#ECD175"]);
 export default function DuoTone() {
   const [list, setList] = useState(initialPalette);
 
@@ -20,7 +20,7 @@ export default function DuoTone() {
   return (
     <Layout>
       <Form createPalette={createPalette} />
-      <PaletteBox coloursList={list} />
+      <PaletteBox coloursList={list} type="duo"/>
       <DownloadButton />
     </Layout>
   );

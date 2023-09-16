@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import Form from "../src/FormSingle";
 import PaletteBox from "../src/PaletteBox";
 import Layout from "../src/Layout";
-import { single } from "../lib/generatePalette";
+import { monoChrome } from "../lib/generatePalette";
 import DownloadButton from "../src/DownloadButton";
 
-const initialPalette = single("#F35969");
+const initialPalette = monoChrome("#F35969");
 export default function App() { 
     const [list, setList] = useState(initialPalette);
 
     function createPalette(colour) {
       try {
-        const palette = single(colour);
+        const palette = monoChrome(colour);
         setList(palette);
       } catch (err) {
         console.log(err.message);
@@ -21,7 +21,7 @@ export default function App() {
   return (
     <Layout>
       <Form createPalette={createPalette} />
-      <PaletteBox coloursList={list}/>
+      <PaletteBox coloursList={list} type="mono"/>
       <DownloadButton />
     </Layout>
   );
