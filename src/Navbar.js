@@ -21,7 +21,7 @@ export default function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 ps-3 ps-lg-0 mb-lg-0">
-            <NavLink name="Single Colour" route="/" />
+            <NavLink name="Monochrome" route="/" />
 
             <NavLink name="Duo Tone" route="/duo-tone" />
           </ul>
