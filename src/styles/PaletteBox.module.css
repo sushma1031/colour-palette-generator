@@ -1,9 +1,13 @@
 .paletteBox {
-  height: 14rem;
+  height: 224px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 600px;
+}
+
+.duo{
+  width: 840px;
 }
 
 .paletteBox> :first-child {
@@ -21,6 +25,10 @@
     margin: 2rem 0 0;
     width: 100%;
     height: 400px;
+  }
+
+  .duo {
+    height: 640px;
   }
 
   .paletteBox> :first-child {

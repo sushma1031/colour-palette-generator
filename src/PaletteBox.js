@@ -8,7 +8,7 @@ export default function PaletteBox(props) {
       id="palette"
       className={
         "mx-lg-auto mb-3 mt-lg-5" +
-        ` ${styles.paletteBox}`
+        ` ${styles.paletteBox} ${styles[props.type] || ""}`
       }
     >
       {props.coloursList.map((colour, index) => {
