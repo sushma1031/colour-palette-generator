@@ -42,12 +42,6 @@ button.navbar-toggler {
   border: none;
 }
 
-button.navbar-toggler:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-
 .theme-switch {
   border: none;
   outline: none;

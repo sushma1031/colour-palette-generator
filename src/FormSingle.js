@@ -57,6 +57,7 @@ export default function Form(props) {
             "&.MuiButtonBase-root:hover": {
               bgcolor: "transparent",
             },
+            borderRadius: "5px",
           }}
           aria-label="generate colour palette"
           size="medium"

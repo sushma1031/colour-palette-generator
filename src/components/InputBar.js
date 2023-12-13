@@ -25,6 +25,7 @@ const InputBar = (props) => {
             "&.MuiButtonBase-root:hover": {
               bgcolor: "transparent",
             },
+            "borderRadius": "5px",
           }}
           disableRipple
           onClick={(e) => {

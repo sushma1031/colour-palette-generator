@@ -26,6 +26,11 @@
   background-color: #e3e3e3;
 }
 
+.buttonStyle button:focus {
+  border: #292929 1px solid;
+  box-shadow: #292929 0px 0px 2px;
+}
+
 .smallText {
   margin: 0;
   margin-top: 0.25rem;

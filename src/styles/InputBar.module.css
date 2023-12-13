@@ -24,6 +24,15 @@
   min-width: 0;
 }
 
+.textInput button {
+  margin-right: 0.5rem;
+}
+
+.textInput button:focus {
+  border: #292929 1px solid;
+  box-shadow: #292929 0px 0px 2px;
+}
+
 .primary,
 .hexColour {
   border-radius: 5px 0 0 5px;
