@@ -17,5 +17,8 @@
     "react": "18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.16.3"
   }
 }
